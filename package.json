@@ -1,0 +1,36 @@
+{
+    "name": "pingman",
+    "version": "0.0.1",
+    "description": "a PING MAN",
+    "main": "pingman.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "pingman"
+    ],
+    "author": "azhder@gmail.com",
+    "license": "MIT",
+    "dependencies": {
+        "@azhder/nfun": "0.0.4",
+        "net-ping": "^1.2.1"
+    },
+    "devDependencies": {
+        "@azhder/eslint-config-azder": "0.0.3",
+        "eslint": "^4.8.0"
+    },
+    "engines": {
+        "node": ">=8.0"
+    },
+    "directories": {
+        "test": "test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/azder/pingman.git"
+    },
+    "bugs": {
+        "url": "https://github.com/azder/pingman/issues"
+    },
+    "homepage": "https://github.com/azder/pingman#readme"
+}
