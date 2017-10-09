@@ -1,6 +1,6 @@
 {
     "name": "@azhder/pingman",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "a PING MAN",
     "preferGlobal": false,
     "main": "index.js",

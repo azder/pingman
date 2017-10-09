@@ -4,7 +4,7 @@ const v4 = 'IPv4';
 const v6 = 'IPv6';
 
 const debug = false;
-const dev = true;
+const dev = false;
 
 module.exports = (
 
