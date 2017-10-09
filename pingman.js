@@ -1,11 +1,13 @@
 /** Created by azder on 2017-10-07. */
 
-const {nth, df} = require('@azhder/nfun');
+const {nth, df, objof} = require('@azhder/nfun');
 
 const pingman = require('./index'); // the true pingman
-const conf = require('./conf/default');
-
 const {deblog, warlog, tagof} = require('./lib/taglog');
+
+
+// TODO: make better conf system
+const conf = objof(require('./conf/default'));
 
 const third = nth(2, process.argv);
 const cmd = df('single', third);
@@ -24,5 +26,13 @@ process.on(
     (error, promise) => warn(`unhandledRejection: ${promise} because ${error.stack}`)
 );
 
-log('pinging...');
-pingman(conf, cmd);
+
+const options = conf.netping;
+
+log(`pinging w/ ${JSON.stringify(options)}...`);
+
+pingman(
+    options,
+    // single is default if cmd is unknown
+    ('multi' === cmd) ? conf.anchors : conf.anchor
+);

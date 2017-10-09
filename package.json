@@ -1,14 +1,19 @@
 {
-    "name": "pingman",
-    "version": "0.0.2",
+    "name": "@azhder/pingman",
+    "version": "0.0.3",
     "description": "a PING MAN",
-    "main": "pingman.js",
+    "preferGlobal": false,
+    "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "eslint": "./node_modules/.bin/eslint **/*.js"
     },
+    "bin": {
+        "pingman": "./pingman.js"
+    },
     "keywords": [
-        "pingman"
+        "pingman",
+        "ping"
     ],
     "author": "azhder@gmail.com",
     "license": "MIT",
