@@ -1,13 +1,18 @@
 /** Created by azder on 2017-10-07. */
 
-const {vow} = require('@azhder/nfun');
+const {nth, df} = require('@azhder/nfun');
 
+const pingman = require('./index'); // the true pingman
 const conf = require('./conf/default');
-const ping = require('./lib/ping');
-const echo = require('./lib/echo');
-const {warlog} = require('./lib/taglog');
 
-const warn = warlog('proc');
+const {deblog, warlog, tagof} = require('./lib/taglog');
+
+const third = nth(2, process.argv);
+const cmd = df('single', third);
+
+const tag = tagof(__filename, third, process.pid);
+const warn = warlog(tag);
+const log = deblog(tag);
 
 process.on(
     'uncaughtException',
@@ -19,11 +24,5 @@ process.on(
     (error, promise) => warn(`unhandledRejection: ${promise} because ${error.stack}`)
 );
 
-(async address => {
-    const [error, {[address]: ms} = {}] = (
-        await vow(ping(conf.netping, address))
-    );
-    ms && echo('YAY', address, 'in', ms, 'ms');
-    error && echo.w('NAY', error.message);
-})(conf.anchor);
-
+log('pinging...');
+pingman(conf, cmd);

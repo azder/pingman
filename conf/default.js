@@ -12,7 +12,8 @@ module.exports = (
 
         dev: dev,
 
-        anchor: '8.8.8.8',
+        anchor:  '8.8.8.8',
+        anchors: ['127.0.0.1', '8.8.8.8', '0.0.0.0'],
 
         ip: {
             v4,

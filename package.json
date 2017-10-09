@@ -1,10 +1,11 @@
 {
     "name": "pingman",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "a PING MAN",
     "main": "pingman.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "eslint": "./node_modules/.bin/eslint **/*.js"
     },
     "keywords": [
         "pingman"
@@ -12,12 +13,12 @@
     "author": "azhder@gmail.com",
     "license": "MIT",
     "dependencies": {
-        "@azhder/nfun": "0.0.4",
+        "@azhder/nfun": "0.0.6",
         "net-ping": "^1.2.1"
     },
     "devDependencies": {
-        "@azhder/eslint-config-azder": "0.0.3",
-        "eslint": "^4.8.0"
+        "eslint": "^4.8.0",
+        "@azhder/eslint-config-azder": "0.0.3"
     },
     "engines": {
         "node": ">=8.0"
