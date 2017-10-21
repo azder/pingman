@@ -1,10 +1,10 @@
 /** Created by azder on 2017-10-07. */
 
 const {nth, df, objof} = require('@azhder/nfun');
+const {deblog, warlog} = require('@azhder/taglog');
 
 const pingman = require('./index'); // the true pingman
-const {deblog, warlog, tagof} = require('./lib/taglog');
-
+const tagof = require('./lib/tagof');
 
 // TODO: make better conf system
 const conf = objof(require('./conf/default'));
